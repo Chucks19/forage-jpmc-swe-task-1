@@ -1,4 +1,5 @@
-################################################################################
+#!/usr/bin/env python
+# ################################################################################
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a
 #  copy of this software and associated documentation files (the "Software"),
@@ -216,7 +217,7 @@ def get(req_handler, routes):
                 return
 
 
-def run(routes, host='0.0.0.0', port=8080):
+def run(routes, host='127.0.0.1', port=8023):
     """ Runs a class as a server whose methods have been decorated with
         @route.
     """
@@ -232,7 +233,7 @@ def run(routes, host='0.0.0.0', port=8080):
     thread = threading.Thread(target=server.serve_forever)
     thread.daemon = True
     thread.start()
-    print('HTTP server started on port 8080')
+    print('HTTP server started on port 8023')
     while True:
         from time import sleep
         sleep(1)
